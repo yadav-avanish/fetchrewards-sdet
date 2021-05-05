@@ -1,7 +1,7 @@
 # Identify the **Fake Gold Bar** -- Excercise for the SDET role at Fetchrewards.
 
 ## Must Have's
-    * Python 3.6+
+    * Python 3.8+
     * PIP
     * Browsers: Chrome or Firefox
 

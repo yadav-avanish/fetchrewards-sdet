@@ -159,7 +159,7 @@ class Game:
         original_style = element.get_attribute('style')
         apply_style("background: yellow; border: 2px solid red;")
         # Un-comment the below line to to enjoy _highlights in action.
-        # sleep(.3)
+        sleep(.5)
         apply_style(original_style)
 
     """
