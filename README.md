@@ -1,41 +1,27 @@
-##########
-This repo solves the Fake Goladbar game for the SDET role at Fetchrewards.
+# Identify the **Fake Gold Bar** -- Excercise for the SDET role at Fetchrewards.
 
-Must Have's
-    * Python 3.5+
+## Must Have's
+    * Python 3.6+
     * PIP
-    * Browsers: Firefox
+    * Browsers: Chrome or Firefox
 
 
-#########
-
-DEFECTS:
+### Observations:
     * RESULT and RESET buttons have duplicate id's
+    * Typo in success message. Should have been "Yay! You found it!"
 
 
-TESTS:
-    duplicate warning - same side and both sides
-    similar single, double, all inputs on both sides
-    YAY message
-    Inject wrong input via JavaScript
-
-  # Setup
-  This project requires Python 3.
-
+## Setup
   To set up the Python environment and install dependencies, run:
 
       > pip install pipenv
       > pipenv install
 
-  ## Running Tests
-  You will need a CrossBrowserTesting license to run the tests in this project.
-  You can obtain a trial license from https://crossbrowsertesting.com/.
-  Add your username and authentication key to `cbt_config.json`.
-
-  To run tests, run the following command from the project's root directory:
+  ### Running Tests
+   To run tests, run the following command from the project's root directory:
 
       > pipenv run python -m pytest
 
-  The terminal will print the pytest banner.
-  Be patient - tests may take a few seconds to complete.
-  You can also check results on the CrossBrowserTesting website.
+    Note: To run tests on firefox, set the following property in config.json
+    ` "browser" : "firefox" `
+    Note: Only Chrome and Firefox are currently supported

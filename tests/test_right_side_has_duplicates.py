@@ -3,6 +3,10 @@ from pages.game import Game
 import pytest
 
 
+
+"""
+Validates the alert for duplicate values in the right bowl
+"""
 # @pytest.mark.skip()
 def test_right_side_has_duplicates(browser):
     GAME = Game(browser)

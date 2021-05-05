@@ -2,6 +2,7 @@ from pages.game import Game
 
 import pytest
 
+
 # For troubleshooting/understadning the capfd workflow
 # makes it to easy to debug by capturing from stdout
 @pytest.mark.skip()

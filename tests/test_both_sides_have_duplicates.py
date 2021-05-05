@@ -2,7 +2,10 @@ from pages.game import Game
 
 import pytest
 
-
+"""
+validates the alert produced if the user enters same input on
+both the left and right bowls
+"""
 # @pytest.mark.skip()
 def test_both_sides_have_duplicates(browser):
     GAME = Game(browser)

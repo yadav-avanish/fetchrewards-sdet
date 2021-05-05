@@ -65,6 +65,11 @@ class Game:
     def load(self):
         self.browser.get(self.URL)
 
+    """
+    Fills out the game board
+    accepts input:
+    returns: 
+    """
     def fill_board(self, left_input, right_input, seed=1):
         left_cells = ["LEFT_{}".format(_) for _ in sorted(random.sample(range(0, 9), seed))]
         right_cells = ["RIGHT_{}".format(_) for _ in sorted(random.sample(range(0, 9), seed))]
@@ -78,6 +83,9 @@ class Game:
 
     # click_weigh and click_reset can be combined into one method,
     # however, that would convolute readability
+    """
+    clicks on the Weigh button
+    """
     def click_weigh(self, wait_for="result_button"):
         result_button = self.browser.find_element(*self.WEIGHT_BUTTON)
         self._highlight(result_button)
@@ -88,7 +96,9 @@ class Game:
                 EC.text_to_be_present_in_element(self.RESULT_BUTTON, '?'))
         else:
             wait.until(EC.alert_is_present())
-
+    """
+    Performs click on the reset button
+    """
     def click_reset(self):
         reset_button = self.browser.find_element(*self.RESET_BUTTON)
         self._highlight(reset_button)
@@ -96,13 +106,23 @@ class Game:
         wait = WebDriverWait(self.browser, 10)
         wait.until(
             EC.text_to_be_present_in_element(self.RESULT_BUTTON, "?"))
-
+    """
+    only reads the value on the result button
+    """
     def read_result(self):
         return self.browser.find_element(*self.RESULT_BUTTON).text
 
+    """
+    grabs the steps with weighing results
+    """
     def read_weighings(self):
         return self.browser.find_element(By.CSS_SELECTOR, "#root > div > div.game > div.game-info > ol").text
 
+    """
+    clicks on coins below the game board
+    returns the alert text as well
+    """
+    # TODO Move grabbing the alert text to a seperate method
     def click_on_coin(self, coin):
         ele = self.browser.find_element(*getattr(self, coin))
         self._highlight(ele)
@@ -112,9 +132,14 @@ class Game:
         alert.accept()
         return alert_txt
 
+    """
+    returns title"""
     def title(self):
         return self.browser.title
 
+    """
+    waits until an alert is found and grabs the alert text
+    """
     def check_alert(self):
         alert = self.browser.switch_to.alert
         alert_text = alert.text
@@ -122,6 +147,10 @@ class Game:
         print(alert_text)
         return alert_text.rstrip()
 
+    """
+    highlights an element being interacted with, thereby making it easier to see what's happenig. 
+    Only for manual execution. 
+    """
     def _highlight(self, element):
         driver = element._parent
         def apply_style(s):
@@ -133,9 +162,15 @@ class Game:
         # sleep(.3)
         apply_style(original_style)
 
+    """
+    returns individual value of the given cell
+    """
     def _get_cell_value(self, locator_string):
         return self.browser.find_element(*getattr(self, locator_string)).get_attribute("value").rstrip()
 
+    """
+    Verifies if the cells on the game board are empty
+    """
     def is_game_board_reset(self):
         for i in range(9):
             if self._get_cell_value("LEFT_{}".format(i)) != "" \

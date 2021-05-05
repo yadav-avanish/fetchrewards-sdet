@@ -3,6 +3,9 @@ from pages.game import Game
 import pytest
 
 
+"""
+Fills out the cells on both bowls and verifies if they were reset/cleared
+"""
 # @pytest.mark.skip()
 def test_click_reset_button(browser):
     GAME = Game(browser)

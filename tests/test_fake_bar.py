@@ -13,6 +13,10 @@ GAME = None
 FAKE_BAR = None
 WEIGHING_STEPS = ""
 
+"""
+Actual Game Play.
+Always finds the bar in 2 steps
+"""
 # @pytest.mark.skip()
 @pytest.mark.dependency()
 def test_fake_bar(browser):
