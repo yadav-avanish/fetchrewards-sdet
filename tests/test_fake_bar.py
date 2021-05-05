@@ -98,6 +98,9 @@ def test_fake_bar(browser):
 def test_coin_selector():
     assert GAME.click_on_coin("COIN_{}".format(FAKE_BAR)) == "Yay! You find it!"
 
+"""
+Verifies the weighing results produced from hitting Weight button
+"""
 # @pytest.mark.skip()
 @pytest.mark.dependency(depends=["test_fake_bar"])
 def test_weighings():
