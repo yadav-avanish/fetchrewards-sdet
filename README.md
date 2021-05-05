@@ -22,6 +22,10 @@
 
       > pipenv run python -m pytest
 
-    Note: To run tests on firefox, set the following property in config.json
-    ` "browser" : "firefox" `
+   To run tests on firefox, set the following property in config.json
+
+    ```
+    "browser" : "firefox"
+
     Note: Only Chrome and Firefox are currently supported
+    ```
