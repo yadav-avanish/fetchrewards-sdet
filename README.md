@@ -1,8 +1,8 @@
 # Identify the **Fake Gold Bar** -- Excercise for the SDET role at Fetchrewards.
 
 ## Must Have's
-    * Python 3.8
-    * PIP
+    * Python Preferably 3.7+
+    * Pip
     * Browsers: Chrome or Firefox
 
 
@@ -16,6 +16,9 @@
 
       > pip install pipenv
       > pipenv install
+
+     Note: if pip installation doesn't work try this
+      ``` sudo -H pip install -U pipenv ```
 
   ### Running Tests
    To run tests, run the following command from the project's root directory:
