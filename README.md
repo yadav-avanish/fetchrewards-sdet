@@ -17,8 +17,12 @@
       > pip install pipenv
       > pipenv install
 
-     Note: if pip installation doesn't work try this
+     Note:
+     1. If pipenv installation doesn't work try this
       ``` sudo -H pip install -U pipenv ```
+     2. If you don't have pip installed then follow the directions here to manually install pip
+     ``` https://pip.pypa.io/en/stable/installing/ ```
+
 
   ### Running Tests
    To run tests, run the following command from the project's root directory:
