@@ -13,7 +13,8 @@
 
 ## Setup
   To set up the Python environment and install dependencies, run:
-
+      > git clone https://github.com/yadav-avanish/fetchrewards-sdet.git
+      > cd <repo>
       > pip install pipenv
       > pipenv install
 
