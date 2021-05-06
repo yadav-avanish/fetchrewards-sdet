@@ -12,20 +12,12 @@
 
 
 ## Setup
-  To set up the Python environment and install dependencies, run:
-      > git clone https://github.com/yadav-avanish/fetchrewards-sdet.git
-      > cd <repo>
-      > python setup.py install
+     * git clone https://github.com/yadav-avanish/fetchrewards-sdet.git
+     * cd <repo>
+     * python setup.py install
 
-  ### Running Tests
-   To run tests, run the following command from the project's root directory:
+## Running Tests
+     * Run ``` pytest ``` from the project root.
+     * To run Firefox, set the ``` "browser" : "firefox" ``` in config.json
 
-      > pytest
-
-   To run tests on firefox, set the following property in config.json
-
-    ```
-    "browser" : "firefox"
-
-    Note: Only Chrome and Firefox are currently supported
-    ```
+    Note: Only supports Google Chrome and Firefox.
