@@ -12,28 +12,12 @@
 
 
 ## Setup
-  To set up the Python environment and install dependencies, run:
-      > git clone https://github.com/yadav-avanish/fetchrewards-sdet.git
-      > cd <repo>
-      > pip install pipenv
-      > pipenv install
+     * git clone https://github.com/yadav-avanish/fetchrewards-sdet.git
+     * cd <repo>
+     * python setup.py install
 
-     Note:
-     1. If pipenv installation doesn't work try this
-      ``` sudo -H pip install -U pipenv ```
-     2. If you don't have pip installed then follow the directions here to manually install pip
-     ``` https://pip.pypa.io/en/stable/installing/ ```
+## Running Tests
+     * Run ``` pytest ``` from the project root.
+     * To run Firefox, set the ``` "browser" : "firefox" ``` in config.json
 
-
-  ### Running Tests
-   To run tests, run the following command from the project's root directory:
-
-      > pipenv run python -m pytest
-
-   To run tests on firefox, set the following property in config.json
-
-    ```
-    "browser" : "firefox"
-
-    Note: Only Chrome and Firefox are currently supported
-    ```
+    Note: Only supports Google Chrome and Firefox.

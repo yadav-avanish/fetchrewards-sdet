@@ -25,3 +25,6 @@ env/
 
 *.log
 *.iml
+*.egg*
+build/
+dist/
