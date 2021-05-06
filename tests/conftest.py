@@ -5,8 +5,9 @@ This module contains the shared fixtures.
 from selenium.webdriver import Chrome, Firefox
 
 import json
-import pytest
 import os
+import platform
+import pytest
 
 CONFIG_PATH = 'tests/config.json'
 DEFAULT_WAIT_TIME = 10
@@ -35,11 +36,12 @@ def config_wait_time(config):
 
 @pytest.fixture(scope='session')
 def browser(config_browser, config_wait_time):
+    os_dir = platform.system()
     # Initialize WebDriver
     if config_browser == 'chrome':
-        driver = Chrome(os.path.join(os.getcwd(), "webdrivers", "chromedriver"))
+        driver = Chrome(os.path.join(os.getcwd(), "webdrivers", os_dir, "chromedriver"))
     elif config_browser == 'firefox':
-        driver = Firefox(executable_path=os.path.join(os.getcwd(), "webdrivers", "geckodriver"))
+        driver = Firefox(executable_path=os.path.join(os.getcwd(), "webdrivers", os_dir, "geckodriver"))
     else:
         raise Exception(f'"{config_browser}" is not a supported browser')
 
